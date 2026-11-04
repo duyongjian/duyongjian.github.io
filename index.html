@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +37,23 @@
     max-width:var(--maxw);margin:0 auto;padding:10px 20px;
     display:flex;align-items:center;justify-content:space-between;gap:12px;
   }
-  .nav-brand{font-weight:700;letter-spacing:.5px;color:var(--ink);}
-  .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;}
+  .nav-brand{font-weight:700;letter-spacing:.5px;color:var(--ink);flex-shrink:0;}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;margin-left:auto;}
   .nav-links a{color:var(--muted);}
   .nav-links a:hover{color:var(--accent);text-decoration:none;}
+
+  /* ---- language switch ---- */
+  .lang-switch{
+    display:flex;gap:2px;border:1px solid var(--line);
+    border-radius:14px;padding:2px;flex-shrink:0;background:#fff;
+  }
+  .lang-switch button{
+    border:none;background:transparent;color:var(--muted);
+    font-family:inherit;font-size:12.5px;padding:3px 9px;
+    border-radius:12px;cursor:pointer;line-height:1;transition:.15s;
+  }
+  .lang-switch button:hover{color:var(--accent);}
+  .lang-switch button.active{background:var(--accent);color:#fff;}
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
 
@@ -80,6 +93,7 @@
   .news-list li{display:flex;gap:14px;padding:7px 0;border-bottom:1px dashed var(--line);}
   .news-date{color:var(--accent);font-weight:600;flex-shrink:0;width:64px;font-variant-numeric:tabular-nums;}
   .news-list li:last-child{border-bottom:none;}
+  .news-list .n{flex:1;}
 
   /* ---- projects ---- */
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
@@ -134,6 +148,7 @@
     .item{flex-direction:column;gap:2px;}
     .item .yr{width:auto;}
     .about-text h1{font-size:26px;}
+    .nav-links{gap:12px;font-size:13px;}
   }
 </style>
 </head>
@@ -150,6 +165,10 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
+    <div class="lang-switch" role="group" aria-label="Language / 语言">
+      <button type="button" data-lang-btn="zh" aria-label="中文">中</button>
+      <button type="button" data-lang-btn="en" aria-label="English">EN</button>
+    </div>
   </div>
 </nav>
 
@@ -161,12 +180,12 @@
       <div class="avatar">道</div>
       <div class="about-text">
         <h1>杜咏键 <span style="font-size:16px;color:var(--muted);font-weight:400;">Du Yongjian</span></h1>
-        <div class="sub">华南理工大学 · 计算机科学与技术（本科，2027 届） · 全英创新班</div>
-        <p>计算机科学本科生，全栈与 AI 应用开发者。喜欢把复杂业务抽象成可复用的组件与工具，关注 <b>AI 应用、智能体（Agent）与知识工程</b>。独立完成过已上线的 AI 知识笔记应用，也在多家公司的真实代码库上做过后端与平台工具研发。</p>
+        <div class="sub" data-zh="华南理工大学 · 计算机科学与技术（本科，2027 届） · 全英创新班" data-en="South China University of Technology · B.Eng. in Computer Science (Class of 2027) · All-English Innovation Class">华南理工大学 · 计算机科学与技术（本科，2027 届） · 全英创新班</div>
+        <p data-zh="计算机科学本科生，全栈与 AI 应用开发者。喜欢把复杂业务抽象成可复用的组件与工具，关注 <b>AI 应用、智能体（Agent）与知识工程</b>。独立完成过已上线的 AI 知识笔记应用，也在多家公司的真实代码库上做过后端与平台工具研发。" data-en="Computer Science undergraduate and full-stack / AI application developer. I enjoy abstracting complex business logic into reusable components and tools, with a focus on <b>AI applications, agents, and knowledge engineering</b>. I have independently shipped a live AI note-taking app, and have worked on backend and platform tooling within real production codebases at several companies.">计算机科学本科生，全栈与 AI 应用开发者。喜欢把复杂业务抽象成可复用的组件与工具，关注 <b>AI 应用、智能体（Agent）与知识工程</b>。独立完成过已上线的 AI 知识笔记应用，也在多家公司的真实代码库上做过后端与平台工具研发。</p>
         <ul class="dirs">
-          <li><b>AI 应用与智能体</b>：RAG、多模型协同、Dify 工作流、Prompt 工程</li>
-          <li><b>全栈工程</b>：Java / SpringBoot、Python、Flutter / Vue 前后端联调</li>
-          <li><b>知识工程与防幻觉</b>：结构化提取、source_quote 引用锚定、auto-prerequisite</li>
+          <li data-zh="<b>AI 应用与智能体</b>：RAG、多模型协同、Dify 工作流、Prompt 工程" data-en="<b>AI Applications and Agents</b>: RAG, multi-model orchestration, Dify workflows, prompt engineering"><b>AI 应用与智能体</b>：RAG、多模型协同、Dify 工作流、Prompt 工程</li>
+          <li data-zh="<b>全栈工程</b>：Java / SpringBoot、Python、Flutter / Vue 前后端联调" data-en="<b>Full-stack Engineering</b>: Java / SpringBoot, Python, Flutter / Vue front-end and back-end integration"><b>全栈工程</b>：Java / SpringBoot、Python、Flutter / Vue 前后端联调</li>
+          <li data-zh="<b>知识工程与防幻觉</b>：结构化提取、source_quote 引用锚定、auto-prerequisite" data-en="<b>Knowledge Engineering and Hallucination Control</b>: structured extraction, source_quote grounding, auto-prerequisite"><b>知识工程与防幻觉</b>：结构化提取、source_quote 引用锚定、auto-prerequisite</li>
         </ul>
         <div class="socials">
           <a href="https://github.com/duyongjian" target="_blank" rel="noopener">GitHub</a>
@@ -182,11 +201,11 @@
   <section id="news">
     <h2 class="sec">News</h2>
     <ul class="news-list">
-      <li><span class="news-date">2026.09</span><span>启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。</span></li>
-      <li><span class="news-date">2026.07</span><span>加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。</span></li>
-      <li><span class="news-date">2026.03</span><span>于广州市圆石投资任实习量化研究员，将投研到交易流程做成可复用工具与组件。</span></li>
-      <li><span class="news-date">2025</span><span>完成多个全栈项目：Web 信息管理系统、微信小程序系列（4 个），后台均基于 SpringBoot + MyBatis + MySQL。</span></li>
-      <li><span class="news-date">2023.09</span><span>进入华南理工大学计算机科学与技术（全英创新班）学习。</span></li>
+      <li><span class="news-date">2026.09</span><span class="n" data-zh="启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。" data-en="Started independent development of <b>AIMindTree</b>, an AI note-taking app, and joined Mopaid Technology as an AI full-stack development intern.">启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。</span></li>
+      <li><span class="news-date">2026.07</span><span class="n" data-zh="加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。" data-en="Joined Beijing Tu'an Century, contributing to the backend and API development of an AI audio/video platform and a short-drama creation agent.">加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。</span></li>
+      <li><span class="news-date">2026.03</span><span class="n" data-zh="于广州市圆石投资任实习量化研究员，将投研到交易流程做成可复用工具与组件。" data-en="Worked as a quantitative research intern at Guangzhou Yuanshi Investment, turning the research-to-trading workflow into reusable tools and components.">于广州市圆石投资任实习量化研究员，将投研到交易流程做成可复用工具与组件。</span></li>
+      <li><span class="news-date">2025</span><span class="n" data-zh="完成多个全栈项目：Web 信息管理系统、微信小程序系列（4 个），后台均基于 SpringBoot + MyBatis + MySQL。" data-en="Completed multiple full-stack projects: a web information management system and a series of four WeChat Mini Programs, all backed by SpringBoot + MyBatis + MySQL.">完成多个全栈项目：Web 信息管理系统、微信小程序系列（4 个），后台均基于 SpringBoot + MyBatis + MySQL。</span></li>
+      <li><span class="news-date">2023.09</span><span class="n" data-zh="进入华南理工大学计算机科学与技术（全英创新班）学习。" data-en="Began studying Computer Science at South China University of Technology (All-English Innovation Class).">进入华南理工大学计算机科学与技术（全英创新班）学习。</span></li>
     </ul>
   </section>
 
@@ -205,39 +224,39 @@
         <div class="thumb">🧠</div>
         <h3>AIMindTree</h3>
         <div class="tags">Flutter · Supabase · Dify · Riverpod/Drift</div>
-        <p>AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线。</p>
+        <p data-zh="AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线。" data-en="An AI note-taking app with a canvas-based knowledge tree, automatic prerequisite completion (auto-prerequisite), and four levels of depth control. Hallucination is controlled through source_quote grounding: any knowledge point without a verifiable source is never persisted. Live.">AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线。</p>
         <div class="links"><a href="#" onclick="return false;">Demo</a><a href="#" onclick="return false;">Code</a></div>
       </div>
 
       <div class="proj" data-cat="web">
         <div class="thumb">⚙️</div>
-        <h3>机加工 / 车削计算页</h3>
-        <div class="tags">纯前端 · 静态化部署</div>
-        <p>将原后端 + 卡密体系的机加工计算页面重构为纯前端静态站并上线，约 16MB / 706 文件，聚焦跨浏览器兼容与加载性能。</p>
+        <h3 data-zh="机加工 / 车削计算页" data-en="Machining / Turning Calculator">机加工 / 车削计算页</h3>
+        <div class="tags" data-zh="纯前端 · 静态化部署" data-en="Pure front-end · Static deployment">纯前端 · 静态化部署</div>
+        <p data-zh="将原后端 + 卡密体系的机加工计算页面重构为纯前端静态站并上线，约 16MB / 706 文件，聚焦跨浏览器兼容与加载性能。" data-en="Rebuilt a machining calculator page, originally backed by a server and a license-key system, into a pure front-end static site and shipped it: roughly 16MB across 706 files, focused on cross-browser compatibility and load performance.">将原后端 + 卡密体系的机加工计算页面重构为纯前端静态站并上线，约 16MB / 706 文件，聚焦跨浏览器兼容与加载性能。</p>
         <div class="links"><a href="https://ac4d0d6ac0854cedb9c7479b4c4d7e1e.app.workbuddy.link" target="_blank" rel="noopener">Live</a></div>
       </div>
 
       <div class="proj" data-cat="tool">
         <div class="thumb">🎬</div>
-        <h3>AIJuBen 剧本拆解</h3>
-        <div class="tags">Snyder Beat Sheet · Generator 流水线</div>
-        <p>剧本拆解项目库：以斯奈德节拍表为标准格式，沉淀可复用的 generator 流水线（_generators + template_lib），支持多 agent 并行批量产出 5 分钟动画拆解。</p>
+        <h3 data-zh="AIJuBen 剧本拆解" data-en="AIJuBen Screenplay Breakdown">AIJuBen 剧本拆解</h3>
+        <div class="tags" data-zh="Snyder Beat Sheet · Generator 流水线" data-en="Snyder Beat Sheet · Generator pipeline">Snyder Beat Sheet · Generator 流水线</div>
+        <p data-zh="剧本拆解项目库：以斯奈德节拍表为标准格式，沉淀可复用的 generator 流水线（_generators + template_lib），支持多 agent 并行批量产出 5 分钟动画拆解。" data-en="A screenplay-breakdown project library: using the Snyder Beat Sheet as the standard format, with a reusable generator pipeline (_generators + template_lib) that supports parallel multi-agent batch production of 5-minute animation breakdowns.">剧本拆解项目库：以斯奈德节拍表为标准格式，沉淀可复用的 generator 流水线（_generators + template_lib），支持多 agent 并行批量产出 5 分钟动画拆解。</p>
         <div class="links"><a href="#" onclick="return false;">Docs</a></div>
       </div>
 
       <div class="proj" data-cat="web">
         <div class="thumb">📱</div>
-        <h3>微信小程序系列（4 个）</h3>
-        <div class="tags">SpringBoot · MyBatis · MySQL · 微信小程序</div>
-        <p>校园志愿活动平台（云开发）、健身房预约、校园订餐、二手书交易，后台统一用 SpringBoot + MyBatis + MySQL 提供接口与运营逻辑。</p>
+        <h3 data-zh="微信小程序系列（4 个）" data-en="WeChat Mini Programs (4)">微信小程序系列（4 个）</h3>
+        <div class="tags" data-zh="SpringBoot · MyBatis · MySQL · 微信小程序" data-en="SpringBoot · MyBatis · MySQL · WeChat Mini Program">SpringBoot · MyBatis · MySQL · 微信小程序</div>
+        <p data-zh="校园志愿活动平台（云开发）、健身房预约、校园订餐、二手书交易，后台统一用 SpringBoot + MyBatis + MySQL 提供接口与运营逻辑。" data-en="A campus volunteer platform (cloud development), a gym booking app, campus food ordering, and a second-hand book trading app, all sharing a SpringBoot + MyBatis + MySQL backend for APIs and operations logic.">校园志愿活动平台（云开发）、健身房预约、校园订餐、二手书交易，后台统一用 SpringBoot + MyBatis + MySQL 提供接口与运营逻辑。</p>
         <div class="links"><a href="#" onclick="return false;">Detail</a></div>
       </div>
 
       <div class="proj" data-cat="web">
         <div class="thumb">🗂️</div>
-        <h3>Web 信息管理系统</h3>
+        <h3 data-zh="Web 信息管理系统" data-en="Web Information Management System">Web 信息管理系统</h3>
         <div class="tags">SpringBoot · MyBatis · MySQL · Vue</div>
-        <p>多技术栈后台系统：设计权限管理、库存、物流等模块数据库表结构与 RESTful 接口，配合 Vue 前端完成联调与多端兼容。</p>
+        <p data-zh="多技术栈后台系统：设计权限管理、库存、物流等模块数据库表结构与 RESTful 接口，配合 Vue 前端完成联调与多端兼容。" data-en="A multi-stack admin system: designed database schemas and RESTful APIs for permission management, inventory, and logistics modules, and worked with a Vue front-end on integration and cross-device compatibility.">多技术栈后台系统：设计权限管理、库存、物流等模块数据库表结构与 RESTful 接口，配合 Vue 前端完成联调与多端兼容。</p>
         <div class="links"><a href="#" onclick="return false;">Detail</a></div>
       </div>
 
@@ -245,7 +264,7 @@
         <div class="thumb">📚</div>
         <h3>The Curse She Carried</h3>
         <div class="tags">Writing · Dark Romance / Werewolf</div>
-        <p>英文女性向暗黑狼人浪漫小说（Inkitt 平台），已完成多章中文稿与英文翻译，投稿声明 AI-assisted。</p>
+        <p data-zh="英文女性向暗黑狼人浪漫小说（Inkitt 平台），已完成多章中文稿与英文翻译，投稿声明 AI-assisted。" data-en="An English dark werewolf romance written for a female readership (on Inkitt), with multiple chapters drafted in Chinese and translated into English; submissions disclose AI assistance.">英文女性向暗黑狼人浪漫小说（Inkitt 平台），已完成多章中文稿与英文翻译，投稿声明 AI-assisted。</p>
         <div class="links"><a href="#" onclick="return false;">Inkitt</a></div>
       </div>
 
@@ -261,33 +280,33 @@
       <div class="item">
         <div class="yr">2026.09 – 2026.10</div>
         <div class="body">
-          <div class="t">AI 应用全栈开发实习生</div>
-          <div class="o">北京摩湃得科技有限公司</div>
-          <div class="d">参与公司内部管理系统研发，独立开发 AI 任务派发模块，完成接口开发与多任务并发处理；梳理需求→编码→联调→验收规范，参与代码审查与文档沉淀。</div>
+          <div class="t" data-zh="AI 应用全栈开发实习生" data-en="AI Full-stack Development Intern">AI 应用全栈开发实习生</div>
+          <div class="o" data-zh="北京摩湃得科技有限公司" data-en="Beijing Mopaid Technology Co., Ltd.">北京摩湃得科技有限公司</div>
+          <div class="d" data-zh="参与公司内部管理系统研发，独立开发 AI 任务派发模块，完成接口开发与多任务并发处理；梳理需求→编码→联调→验收规范，参与代码审查与文档沉淀。" data-en="Contributed to internal management systems; independently built an AI task dispatching module, delivering API development and concurrent multi-task processing. Formalized the requirements, coding, integration and acceptance workflow, and took part in code reviews and documentation.">参与公司内部管理系统研发，独立开发 AI 任务派发模块，完成接口开发与多任务并发处理；梳理需求→编码→联调→验收规范，参与代码审查与文档沉淀。</div>
         </div>
       </div>
       <div class="item">
         <div class="yr">2026.07 – 2026.09</div>
         <div class="body">
-          <div class="t">AI 应用开发实习生</div>
-          <div class="o">北京图安世纪科技股份有限公司</div>
-          <div class="d">参与 AI 音视频平台、短剧创作 Agent 等平台工具的后端与接口开发，做需求迭代、技术调研、问题排查与文档整理。</div>
+          <div class="t" data-zh="AI 应用开发实习生" data-en="AI Application Development Intern">AI 应用开发实习生</div>
+          <div class="o" data-zh="北京图安世纪科技股份有限公司" data-en="Beijing Tu'an Century Technology Co., Ltd.">北京图安世纪科技股份有限公司</div>
+          <div class="d" data-zh="参与 AI 音视频平台、短剧创作 Agent 等平台工具的后端与接口开发，做需求迭代、技术调研、问题排查与文档整理。" data-en="Developed backend and APIs for platform tools including an AI audio/video platform and a short-drama creation agent, covering requirement iterations, technical research, troubleshooting, and documentation.">参与 AI 音视频平台、短剧创作 Agent 等平台工具的后端与接口开发，做需求迭代、技术调研、问题排查与文档整理。</div>
         </div>
       </div>
       <div class="item">
         <div class="yr">2026.03 – 2026.06</div>
         <div class="body">
-          <div class="t">实习量化研究员</div>
-          <div class="o">广州市圆石投资管理有限公司</div>
-          <div class="d">自学证券金融知识，将投研到交易流程做成可复用工具与组件，体现业务需求翻译为工程方案的能力。</div>
+          <div class="t" data-zh="实习量化研究员" data-en="Quantitative Research Intern">实习量化研究员</div>
+          <div class="o" data-zh="广州市圆石投资管理有限公司" data-en="Guangzhou Yuanshi Investment Management Co., Ltd.">广州市圆石投资管理有限公司</div>
+          <div class="d" data-zh="自学证券金融知识，将投研到交易流程做成可复用工具与组件，体现业务需求翻译为工程方案的能力。" data-en="Self-taught securities and finance knowledge; turned the research-to-trading workflow into reusable tools and components, demonstrating the ability to translate business needs into engineering solutions.">自学证券金融知识，将投研到交易流程做成可复用工具与组件，体现业务需求翻译为工程方案的能力。</div>
         </div>
       </div>
       <div class="item">
         <div class="yr">2024.10 – 至今</div>
         <div class="body">
-          <div class="t">学生助理</div>
-          <div class="o">华南理工大学就业指导中心</div>
-          <div class="d">对接企业与学生就业需求，协助处理表格与撰写总结报告，锻炼跨团队协作与沟通。</div>
+          <div class="t" data-zh="学生助理" data-en="Student Assistant">学生助理</div>
+          <div class="o" data-zh="华南理工大学就业指导中心" data-en="Career Guidance Center, South China University of Technology">华南理工大学就业指导中心</div>
+          <div class="d" data-zh="对接企业与学生就业需求，协助处理表格与撰写总结报告，锻炼跨团队协作与沟通。" data-en="Coordinated between employers and students on recruitment needs, assisted with spreadsheets and summary reports, and strengthened cross-team collaboration and communication.">对接企业与学生就业需求，协助处理表格与撰写总结报告，锻炼跨团队协作与沟通。</div>
         </div>
       </div>
     </div>
@@ -297,9 +316,9 @@
       <div class="item">
         <div class="yr">2023.09 – 2027.06</div>
         <div class="body">
-          <div class="t">华南理工大学（985）· 计算机科学与技术 · 本科</div>
-          <div class="o">全英创新班 · 预计 2027 届毕业</div>
-          <div class="d">核心课程：数据结构与算法、操作系统、计算机网络、数据库系统、人工智能等；英语六级（CET-6）、全英文授课环境。</div>
+          <div class="t" data-zh="华南理工大学（985）· 计算机科学与技术 · 本科" data-en="South China University of Technology (Project 985) · Computer Science · B.Eng.">华南理工大学（985）· 计算机科学与技术 · 本科</div>
+          <div class="o" data-zh="全英创新班 · 预计 2027 届毕业" data-en="All-English Innovation Class · Expected graduation: 2027">全英创新班 · 预计 2027 届毕业</div>
+          <div class="d" data-zh="核心课程：数据结构与算法、操作系统、计算机网络、数据库系统、人工智能等；英语六级（CET-6）、全英文授课环境。" data-en="Core courses: Data Structures and Algorithms, Operating Systems, Computer Networks, Database Systems, Artificial Intelligence, and more. CET-6 certified; all-English instruction environment.">核心课程：数据结构与算法、操作系统、计算机网络、数据库系统、人工智能等；英语六级（CET-6）、全英文授课环境。</div>
         </div>
       </div>
     </div>
@@ -320,7 +339,7 @@
   <section id="contact">
     <h2 class="sec">Contact</h2>
     <p style="font-size:15px;color:#46545f;">
-      欢迎就实习、合作或技术交流联系我：
+      <span data-zh="欢迎就实习、合作或技术交流联系我：" data-en="Feel free to reach out for internships, collaboration, or technical exchange:">欢迎就实习、合作或技术交流联系我：</span>
       <a href="mailto:2594589804@qq.com">2594589804@qq.com</a> ·
       <a href="https://github.com/duyongjian" target="_blank" rel="noopener">GitHub</a>
     </p>
@@ -333,7 +352,7 @@
 </div>
 
 <script>
-  // project category filter
+  // ---- project category filter ----
   const filters = document.getElementById('filters');
   const projects = [...document.querySelectorAll('#projGrid .proj')];
   filters.addEventListener('click', e => {
@@ -346,6 +365,43 @@
       p.style.display = (f === 'all' || p.dataset.cat === f) ? '' : 'none';
     });
   });
+
+  // ---- i18n: single-page zh/en switch ----
+  (function(){
+    const LANGS = ['zh', 'en'];
+    const KEY = 'site-lang';
+
+    function detect(){
+      const q = new URLSearchParams(location.search).get('lang');
+      if (LANGS.indexOf(q) !== -1) return q;
+      let saved = null;
+      try { saved = localStorage.getItem(KEY); } catch(e) {}
+      if (LANGS.indexOf(saved) !== -1) return saved;
+      const nav = (navigator.language || 'zh').toLowerCase();
+      return nav.indexOf('en') === 0 ? 'en' : 'zh';
+    }
+
+    function apply(lang){
+      document.documentElement.lang = (lang === 'en' ? 'en' : 'zh-CN');
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-zh]').forEach(function(el){
+        const v = el.getAttribute('data-' + lang);
+        if (v !== null) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang);
+      });
+      try { localStorage.setItem(KEY, lang); } catch(e) {}
+    }
+
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+      b.addEventListener('click', function(){
+        apply(b.getAttribute('data-lang-btn'));
+      });
+    });
+
+    apply(detect());
+  })();
 </script>
 
 </body>
