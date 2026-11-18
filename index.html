@@ -66,15 +66,6 @@
   h2.sec::before{content:"# ";color:var(--accent);opacity:.5;}
 
   /* ---- about ---- */
-  .about{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
-  .avatar{
-    width:128px;height:128px;border-radius:50%;flex-shrink:0;
-    background:linear-gradient(135deg,#1f4e79,#3b82c4);
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:46px;font-weight:700;
-    box-shadow:0 4px 16px rgba(31,78,121,.25);
-  }
-  .about-text{flex:1;min-width:260px;}
   .about-text h1{font-size:30px;margin-bottom:2px;}
   .about-text .sub{color:var(--muted);font-size:15px;margin-bottom:12px;}
   .about-text p{font-size:15px;color:#34424f;margin-bottom:10px;}
@@ -158,12 +149,12 @@
   <div class="nav-inner">
     <div class="nav-brand">杜咏键 · Du Yongjian</div>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#news">News</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-zh="关于" data-en="About">关于</a>
+      <a href="#news" data-zh="动态" data-en="News">动态</a>
+      <a href="#projects" data-zh="项目" data-en="Projects">项目</a>
+      <a href="#experience" data-zh="经历" data-en="Experience">经历</a>
+      <a href="#skills" data-zh="技能" data-en="Skills">技能</a>
+      <a href="#contact" data-zh="联系" data-en="Contact">联系</a>
     </div>
     <div class="lang-switch" role="group" aria-label="Language / 语言">
       <button type="button" data-lang-btn="zh" aria-label="中文">中</button>
@@ -177,7 +168,6 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="about">
-      <div class="avatar">道</div>
       <div class="about-text">
         <h1>杜咏键 <span style="font-size:16px;color:var(--muted);font-weight:400;">Du Yongjian</span></h1>
         <div class="sub" data-zh="华南理工大学 · 计算机科学与技术（本科，2027 届） · 全英创新班" data-en="South China University of Technology · B.Eng. in Computer Science (Class of 2027) · All-English Innovation Class">华南理工大学 · 计算机科学与技术（本科，2027 届） · 全英创新班</div>
@@ -199,9 +189,8 @@
 
   <!-- NEWS -->
   <section id="news">
-    <h2 class="sec">News</h2>
+    <h2 class="sec" data-zh="动态" data-en="News">动态</h2>
     <ul class="news-list">
-      <li><span class="news-date">2026.11</span><span class="n" data-zh="报名第四届大学生职业规划大赛（就业赛道，目标职业：人工智能工程技术人员）；完成多份针对性简历与求职综合展示 PPT。" data-en="Registered for the 4th National College Student Career Planning Competition (employment track; target role: AI engineer); completed multiple tailored resumes and a job-search presentation deck.">报名第四届大学生职业规划大赛（就业赛道，目标职业：人工智能工程技术人员）；完成多份针对性简历与求职综合展示 PPT。</span></li>
       <li><span class="news-date">2026.10</span><span class="n" data-zh="启动 <b>AI 错题本</b>（错题归因强化闭环）独立项目：React 18 + TypeScript 全栈 + 本地大模型归因，完成 v0.1 内测版与端到端验证。" data-en="Launched <b>AI Mistake Notebook</b>, an independent project: React 18 + TypeScript full-stack with local LLM attribution; completed a v0.1 internal beta with end-to-end verification.">启动 <b>AI 错题本</b>（错题归因强化闭环）独立项目：React 18 + TypeScript 全栈 + 本地大模型归因，完成 v0.1 内测版与端到端验证。</span></li>
       <li><span class="news-date">2026.09</span><span class="n" data-zh="启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。" data-en="Started independent development of <b>AIMindTree</b>, an AI note-taking app, and joined Mopaid Technology as an AI full-stack development intern.">启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。</span></li>
       <li><span class="news-date">2026.07</span><span class="n" data-zh="加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。" data-en="Joined Beijing Tu'an Century, contributing to the backend and API development of an AI audio/video platform and a short-drama creation agent.">加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。</span></li>
@@ -213,12 +202,12 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h2 class="sec">Projects</h2>
+    <h2 class="sec" data-zh="项目" data-en="Projects">项目</h2>
     <div class="filters" id="filters">
-      <button class="active" data-f="all">All</button>
-      <button data-f="ai">AI / Agent</button>
-      <button data-f="web">Web / Full-stack</button>
-      <button data-f="tool">Tools / Other</button>
+      <button class="active" data-f="all" data-zh="全部" data-en="All">全部</button>
+      <button data-f="ai" data-zh="AI / 智能体" data-en="AI / Agent">AI / 智能体</button>
+      <button data-f="web" data-zh="Web / 全栈" data-en="Web / Full-stack">Web / 全栈</button>
+      <button data-f="tool" data-zh="工具 / 其他" data-en="Tools / Other">工具 / 其他</button>
     </div>
     <div class="proj-grid" id="projGrid">
 
@@ -227,7 +216,7 @@
         <h3>AIMindTree</h3>
         <div class="tags">Flutter · Supabase · Dify · Riverpod/Drift</div>
         <p data-zh="AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线并开源。" data-en="An AI note-taking app with a canvas-based knowledge tree, automatic prerequisite completion (auto-prerequisite), and four levels of depth control. Hallucination is controlled through source_quote grounding: any knowledge point without a verifiable source is never persisted. Live and open-sourced.">AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线并开源。</p>
-        <div class="links"><a href="https://aimindtree-syncrelayvercel.vercel.app" target="_blank" rel="noopener">Demo</a><a href="https://github.com/duyongjian/AIMindTree" target="_blank" rel="noopener">Code</a></div>
+        <div class="links"><a href="https://github.com/duyongjian/AIMindTree" target="_blank" rel="noopener">Code</a></div>
       </div>
 
       <div class="proj" data-cat="ai">
@@ -238,20 +227,12 @@
         <div class="links"><a href="https://github.com/duyongjian/aicorrection" target="_blank" rel="noopener">Code</a></div>
       </div>
 
-      <div class="proj" data-cat="web">
-        <div class="thumb">⚙️</div>
-        <h3 data-zh="机加工 / 车削计算页" data-en="Machining / Turning Calculator">机加工 / 车削计算页</h3>
-        <div class="tags" data-zh="纯前端 · 静态化部署" data-en="Pure front-end · Static deployment">纯前端 · 静态化部署</div>
-        <p data-zh="将原后端 + 卡密体系的机加工计算页面重构为纯前端静态站并上线，约 16MB / 706 文件，聚焦跨浏览器兼容与加载性能。" data-en="Rebuilt a machining calculator page, originally backed by a server and a license-key system, into a pure front-end static site and shipped it: roughly 16MB across 706 files, focused on cross-browser compatibility and load performance.">将原后端 + 卡密体系的机加工计算页面重构为纯前端静态站并上线，约 16MB / 706 文件，聚焦跨浏览器兼容与加载性能。</p>
-        <div class="links"><a href="https://ac4d0d6ac0854cedb9c7479b4c4d7e1e.app.workbuddy.link" target="_blank" rel="noopener">Live</a></div>
-      </div>
-
       <div class="proj" data-cat="tool">
         <div class="thumb">🎬</div>
         <h3 data-zh="AIJuBen 剧本拆解" data-en="AIJuBen Screenplay Breakdown">AIJuBen 剧本拆解</h3>
         <div class="tags" data-zh="Snyder Beat Sheet · Generator 流水线" data-en="Snyder Beat Sheet · Generator pipeline">Snyder Beat Sheet · Generator 流水线</div>
         <p data-zh="剧本拆解项目库：以斯奈德节拍表为标准格式，沉淀可复用的 generator 流水线（_generators + template_lib），支持多 agent 并行批量产出 5 分钟动画拆解。" data-en="A screenplay-breakdown project library: using the Snyder Beat Sheet as the standard format, with a reusable generator pipeline (_generators + template_lib) that supports parallel multi-agent batch production of 5-minute animation breakdowns.">剧本拆解项目库：以斯奈德节拍表为标准格式，沉淀可复用的 generator 流水线（_generators + template_lib），支持多 agent 并行批量产出 5 分钟动画拆解。</p>
-        <div class="links"><a href="#" onclick="return false;">Docs</a></div>
+        <div class="links"><a href="#" onclick="return false;" data-zh="文档" data-en="Docs">文档</a></div>
       </div>
 
       <div class="proj" data-cat="web">
@@ -259,7 +240,7 @@
         <h3 data-zh="微信小程序系列（4 个）" data-en="WeChat Mini Programs (4)">微信小程序系列（4 个）</h3>
         <div class="tags" data-zh="SpringBoot · MyBatis · MySQL · 微信小程序" data-en="SpringBoot · MyBatis · MySQL · WeChat Mini Program">SpringBoot · MyBatis · MySQL · 微信小程序</div>
         <p data-zh="校园志愿活动平台（云开发）、健身房预约、校园订餐、二手书交易，后台统一用 SpringBoot + MyBatis + MySQL 提供接口与运营逻辑。" data-en="A campus volunteer platform (cloud development), a gym booking app, campus food ordering, and a second-hand book trading app, all sharing a SpringBoot + MyBatis + MySQL backend for APIs and operations logic.">校园志愿活动平台（云开发）、健身房预约、校园订餐、二手书交易，后台统一用 SpringBoot + MyBatis + MySQL 提供接口与运营逻辑。</p>
-        <div class="links"><a href="#" onclick="return false;">Detail</a></div>
+        <div class="links"><a href="#" onclick="return false;" data-zh="详情" data-en="Detail">详情</a></div>
       </div>
 
       <div class="proj" data-cat="web">
@@ -267,15 +248,7 @@
         <h3 data-zh="Web 信息管理系统" data-en="Web Information Management System">Web 信息管理系统</h3>
         <div class="tags">SpringBoot · MyBatis · MySQL · Vue</div>
         <p data-zh="多技术栈后台系统：设计权限管理、库存、物流等模块数据库表结构与 RESTful 接口，配合 Vue 前端完成联调与多端兼容。" data-en="A multi-stack admin system: designed database schemas and RESTful APIs for permission management, inventory, and logistics modules, and worked with a Vue front-end on integration and cross-device compatibility.">多技术栈后台系统：设计权限管理、库存、物流等模块数据库表结构与 RESTful 接口，配合 Vue 前端完成联调与多端兼容。</p>
-        <div class="links"><a href="#" onclick="return false;">Detail</a></div>
-      </div>
-
-      <div class="proj" data-cat="tool">
-        <div class="thumb">📚</div>
-        <h3>The Curse She Carried</h3>
-        <div class="tags">Writing · Dark Romance / Werewolf</div>
-        <p data-zh="英文女性向暗黑狼人浪漫小说（Inkitt 平台），已完成多章中文稿与英文翻译，投稿声明 AI-assisted。" data-en="An English dark werewolf romance written for a female readership (on Inkitt), with multiple chapters drafted in Chinese and translated into English; submissions disclose AI assistance.">英文女性向暗黑狼人浪漫小说（Inkitt 平台），已完成多章中文稿与英文翻译，投稿声明 AI-assisted。</p>
-        <div class="links"><a href="#" onclick="return false;">Inkitt</a></div>
+        <div class="links"><a href="#" onclick="return false;" data-zh="详情" data-en="Detail">详情</a></div>
       </div>
 
     </div>
@@ -283,10 +256,10 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <h2 class="sec">Experience</h2>
+    <h2 class="sec" data-zh="经历" data-en="Experience">经历</h2>
 
     <div class="exp-block">
-      <h3>Work &amp; Internship</h3>
+      <h3 data-zh="工作与实习" data-en="Work &amp; Internship">工作与实习</h3>
       <div class="item">
         <div class="yr">2026.09 – 2026.10</div>
         <div class="body">
@@ -322,7 +295,7 @@
     </div>
 
     <div class="exp-block">
-      <h3>Education</h3>
+      <h3 data-zh="教育背景" data-en="Education">教育背景</h3>
       <div class="item">
         <div class="yr">2023.09 – 2027.06</div>
         <div class="body">
@@ -336,7 +309,7 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <h2 class="sec">Skills</h2>
+    <h2 class="sec" data-zh="技能" data-en="Skills">技能</h2>
     <div class="skills">
       <span>Python</span><span>Java / SpringBoot</span><span>TypeScript / JS / Dart</span>
       <span>React 18 / Vite / Vue</span><span>Flutter</span><span>Node / Express</span><span>微信小程序</span>
@@ -348,7 +321,7 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2 class="sec">Contact</h2>
+    <h2 class="sec" data-zh="联系" data-en="Contact">联系</h2>
     <p style="font-size:15px;color:#46545f;">
       <span data-zh="欢迎就实习、合作或技术交流联系我：" data-en="Feel free to reach out for internships, collaboration, or technical exchange:">欢迎就实习、合作或技术交流联系我：</span>
       <a href="mailto:2594589804@qq.com">2594589804@qq.com</a> ·
@@ -357,7 +330,7 @@
   </section>
 
   <footer>
-    © 2026 杜咏键 · Du Yongjian &nbsp;|&nbsp; Built with a single-page static site · Adapted from an academic homepage template
+    <span data-zh="© 2026 杜咏键 · Du Yongjian　|　单页静态站点 · 改编自学术主页模板" data-en="© 2026 Du Yongjian　|　Built with a single-page static site · Adapted from an academic homepage template">© 2026 杜咏键 · Du Yongjian　|　单页静态站点 · 改编自学术主页模板</span>
   </footer>
 
 </div>
