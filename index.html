@@ -201,6 +201,8 @@
   <section id="news">
     <h2 class="sec">News</h2>
     <ul class="news-list">
+      <li><span class="news-date">2026.11</span><span class="n" data-zh="报名第四届大学生职业规划大赛（就业赛道，目标职业：人工智能工程技术人员）；完成多份针对性简历与求职综合展示 PPT。" data-en="Registered for the 4th National College Student Career Planning Competition (employment track; target role: AI engineer); completed multiple tailored resumes and a job-search presentation deck.">报名第四届大学生职业规划大赛（就业赛道，目标职业：人工智能工程技术人员）；完成多份针对性简历与求职综合展示 PPT。</span></li>
+      <li><span class="news-date">2026.10</span><span class="n" data-zh="启动 <b>AI 错题本</b>（错题归因强化闭环）独立项目：React 18 + TypeScript 全栈 + 本地大模型归因，完成 v0.1 内测版与端到端验证。" data-en="Launched <b>AI Mistake Notebook</b>, an independent project: React 18 + TypeScript full-stack with local LLM attribution; completed a v0.1 internal beta with end-to-end verification.">启动 <b>AI 错题本</b>（错题归因强化闭环）独立项目：React 18 + TypeScript 全栈 + 本地大模型归因，完成 v0.1 内测版与端到端验证。</span></li>
       <li><span class="news-date">2026.09</span><span class="n" data-zh="启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。" data-en="Started independent development of <b>AIMindTree</b>, an AI note-taking app, and joined Mopaid Technology as an AI full-stack development intern.">启动独立开发 <b>AIMindTree</b>（AI 知识笔记应用），并加入摩湃得科技任 AI 应用全栈开发实习生。</span></li>
       <li><span class="news-date">2026.07</span><span class="n" data-zh="加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。" data-en="Joined Beijing Tu'an Century, contributing to the backend and API development of an AI audio/video platform and a short-drama creation agent.">加入北京图安世纪，参与 AI 音视频平台与短剧创作 Agent 的后端与接口研发。</span></li>
       <li><span class="news-date">2026.03</span><span class="n" data-zh="于广州市圆石投资任实习量化研究员，将投研到交易流程做成可复用工具与组件。" data-en="Worked as a quantitative research intern at Guangzhou Yuanshi Investment, turning the research-to-trading workflow into reusable tools and components.">于广州市圆石投资任实习量化研究员，将投研到交易流程做成可复用工具与组件。</span></li>
@@ -224,8 +226,16 @@
         <div class="thumb">🧠</div>
         <h3>AIMindTree</h3>
         <div class="tags">Flutter · Supabase · Dify · Riverpod/Drift</div>
-        <p data-zh="AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线。" data-en="An AI note-taking app with a canvas-based knowledge tree, automatic prerequisite completion (auto-prerequisite), and four levels of depth control. Hallucination is controlled through source_quote grounding: any knowledge point without a verifiable source is never persisted. Live.">AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线。</p>
-        <div class="links"><a href="#" onclick="return false;">Demo</a><a href="#" onclick="return false;">Code</a></div>
+        <p data-zh="AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线并开源。" data-en="An AI note-taking app with a canvas-based knowledge tree, automatic prerequisite completion (auto-prerequisite), and four levels of depth control. Hallucination is controlled through source_quote grounding: any knowledge point without a verifiable source is never persisted. Live and open-sourced.">AI 知识笔记应用：画布知识树 + 自动补全前置知识（auto-prerequisite），四档深度控制；以 source_quote 引用锚定做防幻觉，知识点无可核验来源即不持久化。已上线并开源。</p>
+        <div class="links"><a href="https://aimindtree-syncrelayvercel.vercel.app" target="_blank" rel="noopener">Demo</a><a href="https://github.com/duyongjian/AIMindTree" target="_blank" rel="noopener">Code</a></div>
+      </div>
+
+      <div class="proj" data-cat="ai">
+        <div class="thumb">📝</div>
+        <h3 data-zh="AI 错题本 · 错题归因强化闭环" data-en="AI Mistake Notebook · Attribution Loop">AI 错题本 · 错题归因强化闭环</h3>
+        <div class="tags" data-zh="React 18 · TypeScript · Node/Express · Ollama" data-en="React 18 · TypeScript · Node/Express · Ollama">React 18 · TypeScript · Node/Express · Ollama</div>
+        <p data-zh="面向学生的 AI 学习产品原型：拍照 / 文本上传 → 视觉模型 OCR → 三项结构化归因（错因 / 知识点 / 本质）→ 认可 / 苏格拉底式追问闭环。统一 LlmProvider 抽象层可零改代码切换模型，含超时降级、Mock 兜底、幂等埋点与质量闸门看板；端到端冒烟 15/15 通过（内测版）。" data-en="An AI learning product prototype for students: photo/text upload → vision-model OCR → three-part structured attribution (cause / knowledge point / essence) → approval and Socratic follow-up loop. A unified LlmProvider abstraction switches models with zero code changes, with timeout degradation, Mock fallback, idempotent event tracking and a quality-gate dashboard; 15/15 end-to-end smoke tests pass (internal beta).">面向学生的 AI 学习产品原型：拍照 / 文本上传 → 视觉模型 OCR → 三项结构化归因（错因 / 知识点 / 本质）→ 认可 / 苏格拉底式追问闭环。统一 LlmProvider 抽象层可零改代码切换模型，含超时降级、Mock 兜底、幂等埋点与质量闸门看板；端到端冒烟 15/15 通过（内测版）。</p>
+        <div class="links"><a href="https://github.com/duyongjian/aicorrection" target="_blank" rel="noopener">Code</a></div>
       </div>
 
       <div class="proj" data-cat="web">
@@ -328,10 +338,11 @@
   <section id="skills">
     <h2 class="sec">Skills</h2>
     <div class="skills">
-      <span>Java / SpringBoot</span><span>Python</span><span>JavaScript / Dart</span>
-      <span>MyBatis / MySQL</span><span>Vue</span><span>Flutter</span><span>微信小程序</span>
-      <span>RESTful API</span><span>Git / Maven</span><span>LangChain</span><span>Dify</span>
-      <span>Agent / MCP</span><span>Prompt 工程</span><span>Supabase</span><span>HTML / CSS</span>
+      <span>Python</span><span>Java / SpringBoot</span><span>TypeScript / JS / Dart</span>
+      <span>React 18 / Vite / Vue</span><span>Flutter</span><span>Node / Express</span><span>微信小程序</span>
+      <span>MySQL / SQLite</span><span>RESTful API</span><span>Git / Docker</span>
+      <span>LangChain / RAG</span><span>Dify</span><span>Agent / MCP</span><span>Prompt 工程</span>
+      <span>source_quote 引用锚定</span><span>OCR / 多模态</span><span>Supabase</span><span>llama.cpp 量化部署</span>
     </div>
   </section>
 
